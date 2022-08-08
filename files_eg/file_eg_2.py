@@ -1,0 +1,20 @@
+import re
+a = open('output.txt', 'r')
+b = a.read()
+a.close()
+a1 = input("enter the word to be replaced - ")
+a2 = input("enter the word to be replaced with - ")
+o = re.sub(a1, a2, b)
+f = open('output.txt', 'w')
+f.writelines(o)
+f.close()
+
+o1 = re.sub('thee', 'the', b)
+f1 = open('output.txt', 'w')
+f1.writelines(o1)
+f1.close()
+
+f2 = open('output.txt', 'r')
+b1 = f2.read()
+x = re.findall("orr", b1)
+print(len(x))
